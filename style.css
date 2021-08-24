@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap");
+
 html {
   box-sizing: border-box;
 }
@@ -8,6 +10,8 @@ body {
   overflow-y: hidden;
   display: flex;
   align-items: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 200;
 }
 
 /* Video Background */
@@ -47,6 +51,7 @@ video {
   z-index: 2;
   display: flex;
   justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
 }
 
 .input-container {
@@ -59,6 +64,8 @@ h1 {
   text-align: center;
   margin-top: 0;
   margin-bottom: 10px;
+  color: #f8f9fa;
+  font-weight: 200;
 }
 
 /* Form */
@@ -79,6 +86,7 @@ input {
   border-radius: 20px;
   background: #fff;
   outline: none;
+  font-family: "Raleway", sans-serif;
 }
 
 /* Button */
@@ -89,10 +97,14 @@ button {
   margin-top: 15px;
   border: none;
   text-transform: uppercase;
-  background: #006959;
+  background: #343a40;
   color: white;
   cursor: pointer;
   outline: none;
+}
+
+button:hover {
+  filter: brightness(110%);
 }
 
 /* Countdown */
@@ -101,10 +113,13 @@ ul {
 }
 
 li {
+  display: inline-block;
+  /* flex-wrap: nowrap; */
   font-size: 30px;
   list-style-type: none;
   padding: 10px;
   text-transform: uppercase;
+  color: #f8f9fa;
 }
 
 li span {
@@ -119,6 +134,45 @@ li span {
   top: 60px;
 }
 
+.complete-title {
+  animation: complete 4s infinite;
+}
+
+@keyframes complete {
+  0% {
+    color: rgb(255, 0, 0);
+  }
+
+  12% {
+    color: rgb(255, 145, 0);
+  }
+
+  25% {
+    color: rgb(255, 251, 0);
+  }
+
+  37% {
+    color: rgb(30, 255, 0);
+  }
+
+  50% {
+    color: rgb(86, 83, 255);
+    transform: scale(1.5);
+  }
+
+  63% {
+    color: rgb(221, 47, 251);
+  }
+
+  75% {
+    color: rgb(255, 23, 178);
+  }
+
+  100% {
+    color: rgb(255, 0, 0);
+  }
+}
+
 /* Media Query: Large Smartphone (Vertical) */
 @media screen and (max-width: 600px) {
   .video-background {
@@ -131,6 +185,8 @@ li span {
   }
 
   .container {
+    min-width: unset;
+    width: 95vw;
     min-height: 245px;
     padding: 20px;
     margin: 10px;
@@ -159,9 +215,10 @@ li span {
 
   li {
     font-size: 15px;
+    padding: 0.19rem;
   }
 
   li span {
-    font-size: 40px;
+    font-size: 50px;
   }
 }
